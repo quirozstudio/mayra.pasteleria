@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mayra Pastelería. Tartas artesanales personalizadas para comuniones, cumpleaños, aniversarios y otras celebraciones.">
+  <meta name="theme-color" content="#f9eee4">
+  <title>Mayra Pastelería | Tartas personalizadas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="cake" viewBox="0 0 48 48"><path d="M24 11c-13-8-3-14 0-7 4-7 13-1 0 7Zm0 0v6M14 28v-4c0-5 4-7 10-7s10 2 10 7v4M9 37v-5c0-3 2-5 5-5h20c3 0 5 2 5 5v5M9 34c4 6 7-3 11 0s5 3 9 0 7 6 10 0M7 39c-8 4 2 7 17 7s25-3 17-7M13 40h22"/></symbol>
+      <symbol id="leaf" viewBox="0 0 32 32"><path d="M7 24C3 10 13 6 27 5c0 13-6 23-20 19ZM4 29l15-15"/></symbol>
+      <symbol id="heart" viewBox="0 0 32 32"><path d="M16 27 5 17C-2 10 8 1 16 10c8-9 18 0 11 7Z"/></symbol>
+      <symbol id="calendar" viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="23" rx="3"/><path d="M4 13h24M10 3v7m12-7v7M10 18h1m5 0h1m5 0h1m-13 5h1m5 0h1m5 0h1"/></symbol>
+      <symbol id="chef" viewBox="0 0 32 32"><path d="M9 23v-6A5 5 0 0 1 9 7a7 7 0 0 1 14 0 5 5 0 0 1 0 10v12H9v-6h14"/></symbol>
+      <symbol id="chat" viewBox="0 0 32 32"><path d="M6 24A12 12 0 1 1 12 28L4 30l2-6Z"/><path d="M12 10c-3 0-2 5 1 8s8 4 8 1l-4-2-1 1c-2-1-3-2-3-3l1-1-2-4Z"/></symbol>
+      <symbol id="sprig" viewBox="0 0 150 63"><path d="M4 36c40 16 84-13 142 8M49 41C38 23 18 24 4 36c20 0 24 17 45 5Zm26-1c-21 4-25 15-27 22 18-6 27-10 27-22Zm31-3C103 18 81 7 74 7c6 13 15 26 32 30Zm39 7c-19-7-34 2-43 14 22 2 34-9 43-14Z"/></symbol>
+    </defs>
+  </svg>
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio">
+        <svg aria-hidden="true"><use href="#cake"/></svg>
+        <span>Mayra Pastelería<small>Tartas personalizadas</small></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#creaciones">Creaciones</a>
+        <a href="#detalles">Detalles</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button green header-contact" href="#contacto"><svg aria-hidden="true"><use href="#chat"/></svg> WhatsApp</a>
+    </div>
+  </header>
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Tartas personalizadas</p>
+          <h1 id="hero-title">Momentos especiales,<br> tartas inolvidables.</h1>
+          <p class="hero-description">Creaciones artesanales para comuniones, cumpleaños, aniversarios y otras celebraciones.</p>
+          <div class="hero-actions">
+            <a class="button rose" href="#contacto"><svg aria-hidden="true"><use href="#cake"/></svg> Encarga tu tarta</a>
+            <a class="button outline" href="#creaciones">Ver creaciones</a>
+          </div>
+          <svg class="hero-flourish" viewBox="0 0 220 34" aria-hidden="true"><path d="M1 23c49-15 86 14 108 3 29-15 8-33 1-15-8-19-26-3-2 15 22 11 62-18 111-3"/></svg>
+        </div>
+        <div class="hero-photo">
+          <img src="portada-floral.jpg" srcset="tarta-floral.jpg 720w, portada-floral.jpg 1200w" sizes="(max-width: 700px) 100vw, 58vw" width="1200" height="1200" alt="Tarta turquesa y crema con rosas de color rosa y perlas doradas" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+    <ul class="qualities" aria-label="Características de las tartas">
+      <li><svg aria-hidden="true"><use href="#leaf"/></svg>Elaboración artesanal</li>
+      <li><svg aria-hidden="true"><use href="#heart"/></svg>Diseños personalizados</li>
+      <li><svg aria-hidden="true"><use href="#calendar"/></svg>Para tus celebraciones</li>
+      <li><svg aria-hidden="true"><use href="#chef"/></svg>Repostería artesanal</li>
+    </ul>
+    <section class="section gallery-section" id="creaciones" aria-labelledby="gallery-title">
+      <h2 class="lined-title" id="gallery-title">Nuestras creaciones</h2>
+      <div class="gallery">
+        <a class="gallery-photo" href="tarta-comunion.jpg"><img src="tarta-comunion.jpg" width="720" height="720" loading="lazy" alt="Tarta de comunión turquesa y dorada"></a>
+        <a class="gallery-photo" href="tarta-floral.jpg"><img src="tarta-floral.jpg" width="720" height="720" loading="lazy" alt="Tarta floral con rosas y perlas doradas"></a>
+        <a class="gallery-photo" href="tarta-camara.jpg"><img src="tarta-camara.jpg" width="720" height="788" loading="lazy" alt="Tarta de chocolate decorada con una cámara"></a>
+        <a class="gallery-photo" href="tarta-lavanda.jpg"><img src="tarta-lavanda.jpg" width="720" height="720" loading="lazy" alt="Tarta de cumpleaños en color lavanda"></a>
+        <a class="gallery-photo" href="tarta-aniversario.jpg"><img src="tarta-aniversario.jpg" width="720" height="720" loading="lazy" alt="Tarta de aniversario con una pareja y corazones"></a>
+      </div>
+    </section>
+    <section class="section details-section" id="detalles" aria-labelledby="details-title">
+      <div class="details-heading">
+        <svg aria-hidden="true"><use href="#sprig"/></svg>
+        <div><h2 id="details-title">El arte está en los detalles</h2><p>Conoce de cerca el cuidado de cada creación.</p></div>
+        <svg aria-hidden="true"><use href="#sprig"/></svg>
+      </div>
+      <div class="details-grid">
+        <figure class="detail">
+          <div class="detail-photos">
+            <img class="detail-main" src="tarta-comunion.jpg" width="720" height="720" alt="Tarta de comunión con figura, relieves dorados y crema turquesa" loading="lazy">
+            <div class="detail-closeups">
+              <img src="comunion-figura.jpg" alt="Figura de comunión" loading="lazy">
+              <img src="comunion-dorado.jpg" alt="Relieve dorado" loading="lazy">
+              <img src="comunion-turquesa.jpg" alt="Decoración turquesa" loading="lazy">
+            </div>
+          </div>
+          <figcaption>Tarta de comunión</figcaption>
+        </figure>
+        <figure class="detail">
+          <div class="detail-photos">
+            <img class="detail-main" src="tarta-floral.jpg" width="720" height="720" alt="Tarta floral con rosas sobre crema y cobertura turquesa" loading="lazy">
+            <div class="detail-closeups">
+              <img src="floral-rosa.jpg" alt="Rosas de crema" loading="lazy">
+              <img src="floral-crema.jpg" alt="Textura de la cobertura de crema" loading="lazy">
+              <img src="floral-turquesa.jpg" alt="Textura de la cobertura turquesa" loading="lazy">
+            </div>
+          </div>
+          <figcaption>Tarta floral</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section about-section" id="sobre-mi" aria-labelledby="about-title">
+      <div class="about-layout">
+        <img class="about-photo" src="floral-rosa.jpg" width="440" height="313" alt="Detalle de las rosas de crema de una tarta floral" loading="lazy" decoding="async">
+        <div class="about-copy">
+          <p class="eyebrow">Sobre mí</p>
+          <h2 id="about-title">Una historia que comenzó entre harina, crema y muchas ganas de aprender.</h2>
+          <p>Hace unos nueve años descubrí en la repostería una forma de expresar mi creatividad. Entre los primeros intentos, la práctica y las ganas de aprender, encontré algo que hoy me apasiona: crear tartas que forman parte de momentos especiales.</p>
+          <blockquote><p>«Lo que imagino, lo transformo en crema».</p></blockquote>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contacto" aria-labelledby="contact-title">
+      <svg class="contact-sprig" aria-hidden="true"><use href="#sprig"/></svg>
+      <div>
+        <h2 id="contact-title">¿Tienes una idea en mente?</h2>
+        <p>Cuéntame cómo te gustaría tu tarta.</p>
+        <button class="button green" type="button" id="whatsapp" aria-describedby="contact-note" disabled><svg aria-hidden="true"><use href="#chat"/></svg> Escríbeme por WhatsApp</button>
+        <p class="contact-note" id="contact-note">Contacto por WhatsApp pendiente de activar.</p>
+      </div>
+      <svg class="contact-cake" aria-hidden="true"><use href="#cake"/></svg>
+    </section>
+  </main>
+  <dialog class="lightbox" aria-label="Fotografía de la tarta">
+    <form method="dialog"><button type="submit" aria-label="Cerrar fotografía">×</button></form>
+    <img alt="">
+  </dialog>
+</body>
+</html>
