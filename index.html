@@ -18,6 +18,8 @@
     .flavors-options select { width: 100%; min-height: 46px; padding: 9px 12px; border: 1px solid #b37a73; border-radius: 9px; color: #59101b; background: #fffaf4; font: inherit; font-weight: 400; }
     .flavors-result { display: block; color: #790722; font-weight: 600; overflow-wrap: anywhere; }
     @media (max-width: 520px) { .flavors-options { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+    .flavors-whatsapp { margin-top: 18px; }
+    .flavors-whatsapp[aria-disabled="true"] { opacity: .65; cursor: default; }
   </style>
 </head>
 <body>
@@ -152,6 +154,7 @@
           </label>
         </div>
         <output class="flavors-result" for="cake-flavor cake-filling" id="cake-combination" aria-live="polite">Tu combinación aparecerá aquí.</output>
+        <a class="button green flavors-whatsapp" id="flavors-whatsapp" role="link" aria-disabled="true"><svg aria-hidden="true"><use href="#chat"/></svg> Consultar combinación por WhatsApp</a>
       </div>
     </section>
     <section class="contact" id="contacto" aria-labelledby="contact-title">
@@ -175,7 +178,29 @@
       const filling = document.getElementById('cake-filling');
       const combination = document.getElementById('cake-combination');
 
+      const whatsapp = document.getElementById('flavors-whatsapp');
+
+      function updateConsultation() {
+        const contact = document.querySelector('a#whatsapp');
+        if (!contact || !flavor.value || !filling.value) {
+          whatsapp.removeAttribute('href');
+          whatsapp.setAttribute('aria-disabled', 'true');
+          return;
+        }
+
+        const url = new URL(contact.href);
+        url.searchParams.set('text', [
+          'Hola, Mayra. ¿Puedes hacer una tarta personalizada con esta combinación?',
+          'Sabor: ' + flavor.value + '.',
+          'Relleno: ' + filling.value + '.',
+          '¡Gracias!'
+        ].join('\n'));
+        whatsapp.href = url.href;
+        whatsapp.removeAttribute('aria-disabled');
+      }
+
       function showCombination() {
+        updateConsultation();
         combination.value = flavor.value && filling.value
           ? `Tu combinación: ${flavor.value} con relleno de ${filling.value.toLocaleLowerCase('es').replace('oreo', 'Oreo')}.`
           : 'Tu combinación aparecerá aquí.';
@@ -183,6 +208,7 @@
 
       flavor.addEventListener('change', showCombination);
       filling.addEventListener('change', showCombination);
+      document.addEventListener('DOMContentLoaded', updateConsultation);
       window.addEventListener('pageshow', showCombination);
       showCombination();
     })();
