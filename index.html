@@ -8,6 +8,17 @@
   <title>Sabor y Tentación | Tartas personalizadas</title>
   <link rel="stylesheet" href="styles-portada.css">
   <script src="site.js" defer></script>
+  <style>
+    .flavors-section { padding-block: clamp(24px, 5vw, 64px); }
+    .flavors-card { max-width: 830px; margin-inline: auto; padding: clamp(22px, 5vw, 50px); border: 1px solid #e6c5b9; border-radius: 18px; background: #fbede4; text-align: center; }
+    .flavors-card h2 { color: #790722; }
+    .flavors-card > p { margin-top: 10px; }
+    .flavors-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 25px auto 17px; max-width: 560px; text-align: left; }
+    .flavors-options label { display: grid; gap: 6px; min-width: 0; font-weight: 600; }
+    .flavors-options select { width: 100%; min-height: 46px; padding: 9px 12px; border: 1px solid #b37a73; border-radius: 9px; color: #59101b; background: #fffaf4; font: inherit; font-weight: 400; }
+    .flavors-result { display: block; color: #790722; font-weight: 600; overflow-wrap: anywhere; }
+    @media (max-width: 520px) { .flavors-options { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+  </style>
 </head>
 <body>
   <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -113,6 +124,36 @@
         </div>
       </div>
     </section>
+    <section class="section flavors-section" id="sabores" aria-labelledby="flavors-title">
+      <div class="flavors-card">
+        <h2 id="flavors-title">Sabores y rellenos</h2>
+        <p>Elige un sabor y un relleno para tu tarta.</p>
+        <div class="flavors-options">
+          <label for="cake-flavor">Sabor
+            <select id="cake-flavor">
+              <option value="">Elige un sabor</option>
+              <option>Vainilla</option>
+              <option>Red velvet</option>
+              <option>Zanahoria</option>
+              <option>Chocolate</option>
+              <option>Tres leches</option>
+            </select>
+          </label>
+          <label for="cake-filling">Relleno
+            <select id="cake-filling">
+              <option value="">Elige un relleno</option>
+              <option>Fresa</option>
+              <option>Melocotón</option>
+              <option>Arándanos</option>
+              <option>Nata con Oreo</option>
+              <option>Nata</option>
+              <option>Crema de queso</option>
+            </select>
+          </label>
+        </div>
+        <output class="flavors-result" for="cake-flavor cake-filling" id="cake-combination" aria-live="polite">Tu combinación aparecerá aquí.</output>
+      </div>
+    </section>
     <section class="contact" id="contacto" aria-labelledby="contact-title">
       <svg class="contact-sprig" aria-hidden="true"><use href="#sprig"/></svg>
       <div>
@@ -128,5 +169,23 @@
     <form method="dialog"><button type="submit" aria-label="Cerrar fotografía">×</button></form>
     <img alt="">
   </dialog>
+  <script>
+    (() => {
+      const flavor = document.getElementById('cake-flavor');
+      const filling = document.getElementById('cake-filling');
+      const combination = document.getElementById('cake-combination');
+
+      function showCombination() {
+        combination.value = flavor.value && filling.value
+          ? `Tu combinación: ${flavor.value} con relleno de ${filling.value.toLocaleLowerCase('es').replace('oreo', 'Oreo')}.`
+          : 'Tu combinación aparecerá aquí.';
+      }
+
+      flavor.addEventListener('change', showCombination);
+      filling.addEventListener('change', showCombination);
+      window.addEventListener('pageshow', showCombination);
+      showCombination();
+    })();
+  </script>
 </body>
 </html>
