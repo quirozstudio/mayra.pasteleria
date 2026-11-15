@@ -112,3 +112,30 @@ figcaption{display:inline-block;margin-top:9px;padding:3px 27px;border-radius:46
   .about-layout{grid-template-columns:minmax(0,1fr);gap:22px}
   .about-photo{aspect-ratio:1.55}
 }
+
+
+/* Brand and opening section */
+.site-header{background:#fbf0e4;color:#59101b}
+.site-header .brand{flex-direction:column;gap:5px}
+.site-header .brand img{width:clamp(94px,10vw,130px)}
+.site-header .brand small{margin:0;letter-spacing:.2em}
+.hero{background:radial-gradient(ellipse at 24% 58%,#fbede1,#efd6c8 78%);color:#790722}
+.hero .eyebrow{color:#a34b54}
+.hero-description{color:#521019}
+.hero .rose{background:#870726}
+.hero .rose:hover{background:#670019}
+.hero .outline{color:#870726;border-color:#870726}
+@media(max-width:700px){
+  .header-inner{gap:13px;padding:10px 12px 10px}
+  .site-header .brand{gap:10px}
+  .site-header .brand img{width:clamp(140px,42vw,220px)}
+  .site-header .brand small{font-size:clamp(.57rem,2.55vw,.82rem);letter-spacing:.37em}
+  .site-header nav{gap:clamp(12px,6vw,31px);font-size:clamp(.78rem,3.72vw,1rem)}
+  .hero-copy{padding:clamp(26px,7.2vw,46px) 12px 18px}
+  .hero .eyebrow{font-size:clamp(1.06rem,4.8vw,1.5rem);margin-bottom:.52em}
+  .hero h1{font-size:clamp(1.48rem,8.4vw,3.2rem)}
+  .hero-description{max-width:33ch;font-size:clamp(.9rem,4.15vw,1.16rem);line-height:1.35;margin-top:13px}
+  .hero-actions{flex-direction:column;align-items:center;gap:9px;margin-top:17px}
+  .hero-actions .button{font-size:clamp(.9rem,4.2vw,1.12rem);padding-inline:20px;min-height:42px}
+  .hero-photo img{object-position:50% 27%}
+}
