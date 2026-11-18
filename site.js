@@ -1,12 +1,10 @@
 const whatsappNumber = "34651025279";
-const contactButton = document.querySelector("#whatsapp");
+const contactLink = document.querySelector("#whatsapp");
+const headerLink = document.querySelector(".header-contact");
+const flavor = document.querySelector("#cake-flavor");
+const filling = document.querySelector("#cake-filling");
 
-if (contactButton) {
-  const contactLink = document.createElement("a");
-  const headerLink = document.querySelector(".header-contact");
-  const flavor = document.querySelector("#cake-flavor");
-  const filling = document.querySelector("#cake-filling");
-
+if (contactLink) {
   function updateWhatsAppLink() {
     const message = ["Hola, Mayra. Me gustaría consultar por una tarta personalizada."];
     if (flavor?.value) message.push("Sabor: " + flavor.value + ".");
@@ -16,11 +14,6 @@ if (contactButton) {
     if (headerLink) headerLink.href = href;
   }
 
-  contactLink.className = contactButton.className;
-  contactLink.id = contactButton.id;
-  contactLink.append(...contactButton.childNodes);
-  contactButton.replaceWith(contactLink);
-  document.querySelector("#contact-note")?.remove();
   flavor?.addEventListener("change", updateWhatsAppLink);
   filling?.addEventListener("change", updateWhatsAppLink);
   window.addEventListener("pageshow", updateWhatsAppLink);
